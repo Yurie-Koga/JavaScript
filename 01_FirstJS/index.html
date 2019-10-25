@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Practice</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background: skyblue;
+        cursor: pointer;
+        transition: 0.8s;
+        margin: 8px 8px 0;
+        text-align: center;
+        line-height: 100px;
+      }
+      .circle {
+        background: pink;
+        border-radius: 50%;
+        transform: rotate(360deg);
+      }
+      .win {
+        background: pink;
+        border-radius: 50%;
+        transform: rotate(360deg);
+      }
+      .lose {
+        transform: scale(0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- how to make div by hands -->
+    <!-- <div class="box" id="target1"></div>
+    <div class="box" id="target2"></div>
+    <div class="box" id="target3"></div>
+
+    <script>
+      // auto error check on browser: on
+      "use strict";
+
+      const target1 = document.getElementById("target1"); // Element valiable
+      const target2 = document.getElementById("target2"); // Element valiable
+      const target3 = document.getElementById("target3"); // Element valiable
+
+      target1.addEventListener("click", () => {
+        // document.getElementById("target").style.background = "pink";
+        // document.getElementById("target").style.borderRadius = "50%"; // 0=squar
+        // document.getElementById("target").classList.add("circle"); // use class
+        target1.classList.toggle("circle"); // toggle: turn on/off
+      });
+
+      target2.addEventListener("click", () => {
+        target2.classList.toggle("circle");
+      });
+      target3.addEventListener("click", () => {
+        target3.classList.toggle("circle");
+      });
+    </script> -->
+
+    <!-- how to make div by script -->
+    <script>
+      "use strict";
+
+      const num = 5;
+      const winner = Math.floor(Math.random() * num);
+
+      for (let i = 0; i < num; i++) {
+        const div = document.createElement("div");
+        div.classList.add("box");
+        div.textContent = i;
+
+        div.addEventListener("click", () => {
+          //   div.classList.toggle("circle");
+          if (i == winner) {
+            div.textContent = "Win!";
+            div.classList.add("win");
+          } else {
+            div.textContent = "Lose!";
+            div.classList.add("lose");
+          }
+        });
+
+        document.body.appendChild(div); // show on browser
+      }
+    </script>
+  </body>
+</html>
